@@ -594,283 +594,7 @@ p{
 }
 
 
-/* =====================================================
-   ANIMATED FRIENDS SCENE
-===================================================== */
-
-.meet-scene{
-
-    position:relative;
-
-    width:100%;
-
-    height:
-        min(55vh,500px);
-
-    min-height:320px;
-
-    overflow:hidden;
-
-    border-radius:32px;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(255,120,190,.15),
-            transparent 48%
-        ),
-
-        rgba(255,255,255,.025);
-
-    border:
-        1px solid
-        rgba(255,190,220,.18);
-
-    box-shadow:
-
-        inset 0 0 70px
-        rgba(255,100,180,.08);
-}
-
-
-/* =====================================================
-   ANIMATED GIRL
-=====================================================
-
-   ONE IMAGE:
-   animated-friends.png
-
-   The image contains both girls.
-
-   We show the left and right portions separately.
-===================================================== */
-
-.animated-girl{
-
-    position:absolute;
-
-    top:50%;
-
-    width:55%;
-
-    height:86%;
-
-    transform:
-        translateY(-50%);
-
-    background-image:
-        url("animated-friends-right.png");
-
-    background-repeat:no-repeat;
-
-    background-size:
-        200% 100%;
-
-    background-color:transparent;
-
-    filter:
-        drop-shadow(
-            0 12px 28px
-            rgba(255,90,170,.28)
-        );
-
-    mix-blend-mode:screen;
-
-    z-index:3;
-
-    opacity:0;
-}
-
-
-/* =====================================================
-   LEFT GIRL
-===================================================== */
-
-.girl-left{
-
-    left:-65%;
-
-    background-position:
-        left center;
-
-    clip-path:
-        inset(
-            0 50% 0 0
-        );
-
-    animation:
-        leftWalk
-        4.5s
-        cubic-bezier(.22,.61,.36,1)
-        forwards;
-}
-
-
-/* =====================================================
-   RIGHT GIRL
-===================================================== */
-
-.girl-right{
-
-    right:-65%;
-
-    background-position:
-        right center;
-
-    clip-path:
-        inset(
-            0 0 0 50%
-        );
-
-    animation:
-        rightWalk
-        4.5s
-        cubic-bezier(.22,.61,.36,1)
-        forwards;
-}
-
-
-/* =====================================================
-   LEFT WALK
-===================================================== */
-
-@keyframes leftWalk{
-
-    0%{
-
-        left:-65%;
-
-        opacity:0;
-
-        transform:
-            translateY(-50%)
-            translateX(-40px)
-            scale(.82)
-            rotate(-4deg);
-    }
-
-    12%{
-
-        opacity:1;
-    }
-
-    35%{
-
-        transform:
-            translateY(-50%)
-            translateX(20px)
-            scale(.9)
-            rotate(3deg);
-    }
-
-    60%{
-
-        left:2%;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1)
-            rotate(-2deg);
-    }
-
-    78%{
-
-        left:9%;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1.02)
-            rotate(1deg);
-    }
-
-    100%{
-
-        left:10%;
-
-        opacity:1;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1.02)
-            rotate(0deg);
-    }
-}
-
-
-/* =====================================================
-   RIGHT WALK
-===================================================== */
-
-@keyframes rightWalk{
-
-    0%{
-
-        right:-65%;
-
-        opacity:0;
-
-        transform:
-            translateY(-50%)
-            translateX(40px)
-            scale(.82)
-            rotate(4deg);
-    }
-
-    12%{
-
-        opacity:1;
-    }
-
-    35%{
-
-        transform:
-            translateY(-50%)
-            translateX(-20px)
-            scale(.9)
-            rotate(-3deg);
-    }
-
-    60%{
-
-        right:2%;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1)
-            rotate(2deg);
-    }
-
-    78%{
-
-        right:9%;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1.02)
-            rotate(-1deg);
-    }
-
-    100%{
-
-        right:10%;
-
-        opacity:1;
-
-        transform:
-            translateY(-50%)
-            translateX(0)
-            scale(1.02)
-            rotate(0deg);
-    }
-}
-
-
+         
 /* =====================================================
    MEETING GLOW
 ===================================================== */
@@ -1733,6 +1457,45 @@ p{
      PAGE 7 — FINAL
 ===================================================== -->
 
+.photo-frame{
+
+    width:min(80vw,370px);
+
+    height:min(55vh,480px);
+
+    margin:
+        0 auto
+        22px;
+
+    padding:7px;
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd0e6,
+            #9e6cff,
+            #ffd0e6
+        );
+
+    box-shadow:
+        0 20px 65px
+        rgba(255,100,190,.25);
+}
+
+
+.photo-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:20px;
+}
 <section class="page" id="page7">
 
     <div class="content">
@@ -1883,128 +1646,6 @@ function restart() {
 
 }
 
-
-/* -----------------------------------------------------
-   FRIENDS MEETING ANIMATION
------------------------------------------------------ */
-
-function restartMeetingAnimation() {
-
-    const leftGirl =
-        document.querySelector(
-            ".girl-left"
-        );
-
-    const rightGirl =
-        document.querySelector(
-            ".girl-right"
-        );
-
-    const glow =
-        document.querySelector(
-            ".meet-glow"
-        );
-
-    const heart =
-        document.querySelector(
-            ".meet-heart"
-        );
-
-    const sparkles =
-        document.querySelectorAll(
-            ".sparkle"
-        );
-
-
-    if(!leftGirl || !rightGirl) {
-        return;
-    }
-
-
-    /*
-       Reset animations
-    */
-
-    leftGirl.style.animation = "none";
-
-    rightGirl.style.animation = "none";
-
-    if(glow) {
-        glow.style.animation = "none";
-    }
-
-    if(heart) {
-        heart.style.animation = "none";
-    }
-
-
-    sparkles.forEach(function(item) {
-
-        item.style.animation = "none";
-
-    });
-
-
-    /*
-       Force browser reflow
-       so animation can start again.
-    */
-
-    void leftGirl.offsetWidth;
-
-    void rightGirl.offsetWidth;
-
-
-    /*
-       Start both friends
-       from opposite sides.
-    */
-
-    leftGirl.style.animation =
-        "leftWalk 4.5s cubic-bezier(.22,.61,.36,1) forwards";
-
-
-    rightGirl.style.animation =
-        "rightWalk 4.5s cubic-bezier(.22,.61,.36,1) forwards";
-
-
-    /*
-       Heart appears when
-       they meet.
-    */
-
-    if(heart) {
-
-        heart.style.animation =
-            "meetingHeart 1.4s 4s cubic-bezier(.2,.8,.2,1) forwards";
-
-    }
-
-
-    /*
-       Glow effect
-    */
-
-    if(glow) {
-
-        glow.style.animation =
-            "meetingGlow 1.6s 4s ease-out forwards";
-
-    }
-
-
-    /*
-       Sparkles
-    */
-
-    sparkles.forEach(function(item) {
-
-        item.style.animation =
-            "sparkleBurst 1.5s 4.1s ease-out forwards";
-
-    });
-
-}
 
 
 /* -----------------------------------------------------
