@@ -2,22 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100812">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-      content="#120912">
-
-<title>
-  Happy Birthday Faiza 💗
-</title>
+<title>Happy Birthday Faiza 💗</title>
 
 <style>
 
-/* =========================================
+/* =====================================================
    RESET
-========================================= */
+===================================================== */
 
 *{
     margin:0;
@@ -38,38 +32,35 @@ body{
         "Times New Roman",
         serif;
 
-    color:white;
+    color:#fff;
 
     background:
         radial-gradient(
-            circle at 20% 20%,
-            rgba(255,105,180,.18),
+            circle at 15% 15%,
+            rgba(255,110,180,.18),
             transparent 30%
         ),
-
         radial-gradient(
-            circle at 80% 80%,
-            rgba(160,80,255,.16),
-            transparent 30%
+            circle at 85% 80%,
+            rgba(150,90,255,.17),
+            transparent 32%
         ),
-
         linear-gradient(
             135deg,
-            #08060c,
-            #180918,
-            #09060e
+            #08060d,
+            #190a19,
+            #0b0710
         );
 }
 
 
-/* =========================================
-   STARS
-========================================= */
+/* =====================================================
+   STAR BACKGROUND
+===================================================== */
 
 .stars{
     position:fixed;
     inset:0;
-
     pointer-events:none;
 
     background-image:
@@ -78,10 +69,9 @@ body{
             rgba(255,255,255,.9) 1px,
             transparent 1.5px
         ),
-
         radial-gradient(
             circle,
-            rgba(255,170,220,.7) 1px,
+            rgba(255,180,220,.7) 1px,
             transparent 1.5px
         );
 
@@ -96,10 +86,13 @@ body{
     opacity:.45;
 
     animation:
-        starsMove 18s linear infinite;
+        starMove
+        20s
+        linear
+        infinite;
 }
 
-@keyframes starsMove{
+@keyframes starMove{
 
     from{
         transform:translateY(0);
@@ -111,43 +104,38 @@ body{
 }
 
 
-/* =========================================
+/* =====================================================
    APP
-========================================= */
+===================================================== */
 
 .app{
     width:100%;
-    height:100%;
+    height:100vh;
     position:relative;
+    overflow:hidden;
 }
 
 
-/* =========================================
-   PAGES
-========================================= */
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
 
 .page{
-
     position:absolute;
-
     inset:0;
 
     display:flex;
-
     justify-content:center;
     align-items:center;
 
-    text-align:center;
-
-    padding:20px;
+    padding:18px;
 
     opacity:0;
-
     visibility:hidden;
 
     transform:
-        scale(1.05)
-        translateY(15px);
+        scale(.94)
+        translateY(25px);
 
     transition:
         opacity .8s ease,
@@ -158,9 +146,7 @@ body{
 }
 
 .page.active{
-
     opacity:1;
-
     visibility:visible;
 
     transform:
@@ -172,28 +158,63 @@ body{
 
 
 .content{
-
-    width:min(92%,720px);
-
+    width:min(94%,720px);
     position:relative;
-
     z-index:20;
 }
 
 
-/* =========================================
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.card{
+
+    width:100%;
+
+    padding:
+        30px
+        22px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.065);
+
+    border:
+        1px solid
+        rgba(255,190,220,.20);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35),
+
+        inset 0 0 30px
+        rgba(255,255,255,.035);
+
+    text-align:center;
+}
+
+
+/* =====================================================
    TEXT
-========================================= */
+===================================================== */
 
 .small{
 
-    color:#ffb7d8;
+    color:#ffb8d8;
 
     text-transform:uppercase;
 
     letter-spacing:4px;
 
-    font-size:12px;
+    font-size:11px;
 
     margin-bottom:14px;
 }
@@ -203,22 +224,22 @@ h1{
 
     font-size:
         clamp(
-            45px,
-            11vw,
-            90px
+            42px,
+            10vw,
+            82px
         );
 
     line-height:1;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
     background:
         linear-gradient(
             90deg,
-            #ffffff,
-            #ffafd5,
-            #ffd9eb,
-            #ffffff
+            #fff,
+            #ffafd4,
+            #f1d1ff,
+            #fff
         );
 
     -webkit-background-clip:text;
@@ -227,7 +248,11 @@ h1{
 
     color:transparent;
 
-    animation:titleGlow 3s ease-in-out infinite alternate;
+    animation:
+        titleGlow
+        3s
+        ease-in-out
+        infinite alternate;
 }
 
 @keyframes titleGlow{
@@ -235,7 +260,7 @@ h1{
     from{
         filter:
             drop-shadow(
-                0 0 5px
+                0 0 6px
                 rgba(255,100,180,.2)
             );
     }
@@ -243,8 +268,8 @@ h1{
     to{
         filter:
             drop-shadow(
-                0 0 25px
-                rgba(255,100,180,.65)
+                0 0 24px
+                rgba(255,100,180,.6)
             );
     }
 }
@@ -254,10 +279,12 @@ h2{
 
     font-size:
         clamp(
-            28px,
+            27px,
             7vw,
-            55px
+            52px
         );
+
+    line-height:1.15;
 
     margin-bottom:18px;
 }
@@ -269,18 +296,18 @@ p{
         clamp(
             16px,
             4vw,
-            21px
+            20px
         );
 
     line-height:1.8;
 
-    color:#f5dce9;
+    color:#f5ddea;
 }
 
 
-/* =========================================
+/* =====================================================
    BUTTON
-========================================= */
+===================================================== */
 
 .next-btn{
 
@@ -288,108 +315,125 @@ p{
 
     padding:
         15px
-        27px;
+        28px;
 
     border-radius:50px;
 
     border:
         1px solid
-        rgba(255,190,220,.55);
+        rgba(255,210,230,.35);
 
     background:
-        rgba(255,255,255,.07);
+        linear-gradient(
+            135deg,
+            rgba(255,105,170,.18),
+            rgba(160,100,255,.16)
+        );
 
     color:white;
 
     font-size:15px;
 
-    letter-spacing:1px;
+    letter-spacing:.5px;
 
     cursor:pointer;
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
 
     box-shadow:
-        0 0 20px
-        rgba(255,100,180,.12);
+        0 10px 30px
+        rgba(255,90,170,.15);
 
-    transition:.3s;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
 }
 
 .next-btn:hover{
 
     transform:
         translateY(-4px)
-        scale(1.04);
+        scale(1.03);
 
     background:
-        rgba(255,120,190,.17);
+        linear-gradient(
+            135deg,
+            rgba(255,105,170,.30),
+            rgba(160,100,255,.28)
+        );
 
     box-shadow:
-        0 0 35px
-        rgba(255,100,180,.4);
+        0 15px 40px
+        rgba(255,90,170,.3);
+}
+
+.next-btn:active{
+
+    transform:
+        scale(.96);
 }
 
 
-/* =========================================
+/* =====================================================
    FLOATING HEARTS
-========================================= */
+===================================================== */
 
 .heart{
 
     position:absolute;
 
-    color:#ff9dca;
+    color:#ff9dcc;
 
-    font-size:27px;
-
-    opacity:.6;
+    font-size:26px;
 
     pointer-events:none;
 
+    opacity:.6;
+
     animation:
-        heartFloat
+        floatingHeart
         5s
         ease-in-out
         infinite;
 }
 
 .heart.one{
-    left:8%;
-    top:15%;
+    left:7%;
+    top:13%;
 }
 
 .heart.two{
-    right:10%;
-    top:22%;
+    right:9%;
+    top:20%;
     animation-delay:1s;
 }
 
 .heart.three{
-    left:13%;
+    left:12%;
     bottom:18%;
     animation-delay:2s;
 }
 
 .heart.four{
-    right:12%;
-    bottom:15%;
+    right:10%;
+    bottom:14%;
     animation-delay:3s;
 }
 
-@keyframes heartFloat{
+@keyframes floatingHeart{
 
     0%,100%{
         transform:
             translateY(0)
-            rotate(-5deg);
+            rotate(-6deg);
 
-        opacity:.3;
+        opacity:.25;
     }
 
     50%{
         transform:
-            translateY(-25px)
+            translateY(-24px)
             rotate(8deg);
 
         opacity:1;
@@ -397,9 +441,9 @@ p{
 }
 
 
-/* =========================================
+/* =====================================================
    INTRO HEART
-========================================= */
+===================================================== */
 
 .intro-heart{
 
@@ -413,26 +457,29 @@ p{
     border-radius:50%;
 
     display:flex;
-
     justify-content:center;
     align-items:center;
 
     font-size:62px;
 
     background:
-        rgba(255,100,180,.09);
+        rgba(255,90,170,.08);
 
     border:
         1px solid
-        rgba(255,180,220,.3);
+        rgba(255,190,220,.28);
 
     box-shadow:
         0 0 45px
-        rgba(255,80,170,.25);
+        rgba(255,80,170,.25),
+
+        inset 0 0 25px
+        rgba(255,255,255,.04);
 
     animation:
         heartPulse
         2s
+        ease-in-out
         infinite;
 }
 
@@ -448,16 +495,17 @@ p{
 }
 
 
-/* =========================================
-   PHOTO
-   ORIGINAL PHOTO ONLY
-========================================= */
+/* =====================================================
+   ORIGINAL PHOTO
+   IMPORTANT:
+   THESE ARE NOT CUT OUT
+===================================================== */
 
 .photo-frame{
 
     width:min(80vw,370px);
 
-    height:min(57vh,500px);
+    height:min(55vh,480px);
 
     margin:
         0 auto
@@ -465,7 +513,7 @@ p{
 
     padding:7px;
 
-    border-radius:25px;
+    border-radius:26px;
 
     background:
         linear-gradient(
@@ -476,7 +524,7 @@ p{
         );
 
     box-shadow:
-        0 20px 70px
+        0 20px 65px
         rgba(255,100,190,.25);
 }
 
@@ -490,13 +538,65 @@ p{
 
     display:block;
 
-    border-radius:19px;
+    border-radius:20px;
 }
 
 
-/* =========================================
-   ANIMATED FRIENDS PAGE
-========================================= */
+/* =====================================================
+   PHOTO PAIR
+===================================================== */
+
+.photo-pair{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:20px;
+}
+
+
+.photo-small{
+
+    width:
+        min(38vw,180px);
+
+    height:
+        min(48vw,230px);
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    border:
+        3px solid
+        rgba(255,255,255,.7);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.35);
+}
+
+
+.photo-heart{
+
+    font-size:35px;
+
+    animation:
+        heartPulse
+        1.5s
+        infinite;
+}
+
+
+/* =====================================================
+   ANIMATED FRIENDS SCENE
+===================================================== */
 
 .meet-scene{
 
@@ -505,48 +605,46 @@ p{
     width:100%;
 
     height:
-        min(60vh,520px);
+        min(55vh,500px);
 
-    min-height:330px;
+    min-height:320px;
 
     overflow:hidden;
 
     border-radius:32px;
 
     background:
+
         radial-gradient(
             circle at center,
-            rgba(255,120,190,.14),
-            transparent 50%
+            rgba(255,120,190,.15),
+            transparent 48%
         ),
 
         rgba(255,255,255,.025);
 
     border:
         1px solid
-        rgba(255,180,220,.18);
+        rgba(255,190,220,.18);
 
     box-shadow:
-        inset 0 0 60px
+
+        inset 0 0 70px
         rgba(255,100,180,.08);
 }
 
 
-/*
-================================================
- IMPORTANT
-================================================
+/* =====================================================
+   ANIMATED GIRL
+=====================================================
 
-एक ही animated-friends.png इस्तेमाल हो रही है।
+   ONE IMAGE:
+   animated-friends.png
 
-उस image में:
+   The image contains both girls.
 
-LEFT GIRL  = image का left half
-RIGHT GIRL = image का right half
-
-हम CSS से दोनों को अलग-अलग दिखा रहे हैं।
-*/
-
+   We show the left and right portions separately.
+===================================================== */
 
 .animated-girl{
 
@@ -554,9 +652,9 @@ RIGHT GIRL = image का right half
 
     top:50%;
 
-    width:52%;
+    width:55%;
 
-    height:88%;
+    height:86%;
 
     transform:
         translateY(-50%);
@@ -569,29 +667,29 @@ RIGHT GIRL = image का right half
     background-size:
         200% 100%;
 
+    background-color:transparent;
+
     filter:
         drop-shadow(
-            0 15px 30px
-            rgba(255,100,180,.25)
+            0 12px 28px
+            rgba(255,90,170,.28)
         );
-
-    /*
-       black background को blend करने के लिए
-    */
 
     mix-blend-mode:screen;
 
     z-index:3;
+
+    opacity:0;
 }
 
 
-/* =========================================
+/* =====================================================
    LEFT GIRL
-========================================= */
+===================================================== */
 
 .girl-left{
 
-    left:-60%;
+    left:-65%;
 
     background-position:
         left center;
@@ -602,20 +700,20 @@ RIGHT GIRL = image का right half
         );
 
     animation:
-        leftGirlCome
-        4s
-        ease-in-out
+        leftWalk
+        4.5s
+        cubic-bezier(.22,.61,.36,1)
         forwards;
 }
 
 
-/* =========================================
+/* =====================================================
    RIGHT GIRL
-========================================= */
+===================================================== */
 
 .girl-right{
 
-    right:-60%;
+    right:-65%;
 
     background-position:
         right center;
@@ -626,104 +724,163 @@ RIGHT GIRL = image का right half
         );
 
     animation:
-        rightGirlCome
-        4s
-        ease-in-out
+        rightWalk
+        4.5s
+        cubic-bezier(.22,.61,.36,1)
         forwards;
 }
 
 
-/* =========================================
-   LEFT MOVEMENT
-========================================= */
+/* =====================================================
+   LEFT WALK
+===================================================== */
 
-@keyframes leftGirlCome{
+@keyframes leftWalk{
 
     0%{
 
-        left:-60%;
+        left:-65%;
 
         opacity:0;
 
         transform:
             translateY(-50%)
-            scale(.8);
+            translateX(-40px)
+            scale(.82)
+            rotate(-4deg);
     }
 
-    15%{
+    12%{
 
         opacity:1;
     }
 
-    70%{
-
-        left:5%;
+    35%{
 
         transform:
             translateY(-50%)
-            scale(1);
+            translateX(20px)
+            scale(.9)
+            rotate(3deg);
+    }
+
+    60%{
+
+        left:2%;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1)
+            rotate(-2deg);
+    }
+
+    78%{
+
+        left:9%;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1.02)
+            rotate(1deg);
     }
 
     100%{
 
-        left:5%;
+        left:10%;
+
+        opacity:1;
 
         transform:
             translateY(-50%)
-            scale(1);
+            translateX(0)
+            scale(1.02)
+            rotate(0deg);
     }
 }
 
 
-/* =========================================
-   RIGHT MOVEMENT
-========================================= */
+/* =====================================================
+   RIGHT WALK
+===================================================== */
 
-@keyframes rightGirlCome{
+@keyframes rightWalk{
 
     0%{
 
-        right:-60%;
+        right:-65%;
 
         opacity:0;
 
         transform:
             translateY(-50%)
-            scale(.8);
+            translateX(40px)
+            scale(.82)
+            rotate(4deg);
     }
 
-    15%{
+    12%{
 
         opacity:1;
     }
 
-    70%{
-
-        right:5%;
+    35%{
 
         transform:
             translateY(-50%)
-            scale(1);
+            translateX(-20px)
+            scale(.9)
+            rotate(-3deg);
+    }
+
+    60%{
+
+        right:2%;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1)
+            rotate(2deg);
+    }
+
+    78%{
+
+        right:9%;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1.02)
+            rotate(-1deg);
     }
 
     100%{
 
-        right:5%;
+        right:10%;
+
+        opacity:1;
 
         transform:
             translateY(-50%)
-            scale(1);
+            translateX(0)
+            scale(1.02)
+            rotate(0deg);
     }
 }
 
 
-/* =========================================
-   HEART WHEN THEY MEET
-========================================= */
+/* =====================================================
+   MEETING GLOW
+===================================================== */
 
-.meet-heart{
+.meet-glow{
 
     position:absolute;
+
+    width:150px;
+    height:150px;
 
     left:50%;
     top:50%;
@@ -732,11 +889,81 @@ RIGHT GIRL = image का right half
         translate(-50%,-50%)
         scale(0);
 
-    font-size:75px;
+    border-radius:50%;
 
-    z-index:8;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,150,210,.45),
+            rgba(255,100,180,.12),
+            transparent 70%
+        );
+
+    filter:blur(4px);
 
     opacity:0;
+
+    z-index:4;
+
+    animation:
+        meetingGlow
+        1.5s
+        4s
+        ease-out
+        forwards;
+}
+
+@keyframes meetingGlow{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(0);
+
+        opacity:0;
+    }
+
+    45%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.5);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(2.1);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   MEETING HEART
+===================================================== */
+
+.meet-heart{
+
+    position:absolute;
+
+    left:50%;
+    top:46%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(0);
+
+    font-size:72px;
+
+    opacity:0;
+
+    z-index:10;
 
     filter:
         drop-shadow(
@@ -746,9 +973,9 @@ RIGHT GIRL = image का right half
 
     animation:
         meetingHeart
-        1.3s
-        3.7s
-        ease
+        1.4s
+        4s
+        cubic-bezier(.2,.8,.2,1)
         forwards;
 }
 
@@ -763,11 +990,20 @@ RIGHT GIRL = image का right half
         opacity:0;
     }
 
-    50%{
+    35%{
 
         transform:
             translate(-50%,-50%)
-            scale(1.3);
+            scale(1.35);
+
+        opacity:1;
+    }
+
+    65%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(.9);
 
         opacity:1;
     }
@@ -783,9 +1019,83 @@ RIGHT GIRL = image का right half
 }
 
 
-/* =========================================
-   FRIENDSHIP CARD
-========================================= */
+/* =====================================================
+   MINI SPARKLES
+===================================================== */
+
+.sparkle{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    font-size:18px;
+
+    opacity:0;
+
+    z-index:11;
+
+    animation:
+        sparkleBurst
+        1.5s
+        4.1s
+        ease-out
+        forwards;
+}
+
+.sparkle.s1{
+    --x:-90px;
+    --y:-75px;
+}
+
+.sparkle.s2{
+    --x:90px;
+    --y:-65px;
+}
+
+.sparkle.s3{
+    --x:-105px;
+    --y:55px;
+}
+
+.sparkle.s4{
+    --x:105px;
+    --y:55px;
+}
+
+@keyframes sparkleBurst{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            translate(0,0)
+            scale(.2);
+
+        opacity:0;
+    }
+
+    25%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1.2);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   FRIEND CARD
+===================================================== */
 
 .friend-card{
 
@@ -800,7 +1110,7 @@ RIGHT GIRL = image का right half
 
     border:
         1px solid
-        rgba(255,190,220,.2);
+        rgba(255,190,220,.20);
 
     backdrop-filter:blur(16px);
 
@@ -823,15 +1133,15 @@ RIGHT GIRL = image का right half
 }
 
 
-/* =========================================
+/* =====================================================
    FINAL
-========================================= */
+===================================================== */
 
 .final-title{
 
     font-size:
         clamp(
-            35px,
+            34px,
             9vw,
             70px
         );
@@ -840,9 +1150,9 @@ RIGHT GIRL = image का right half
 
 .final-hearts{
 
-    margin:25px 0;
+    margin:24px 0;
 
-    font-size:38px;
+    font-size:37px;
 
     letter-spacing:8px;
 }
@@ -860,68 +1170,24 @@ RIGHT GIRL = image का right half
 }
 
 
-/* =========================================
-   DOTS
-========================================= */
-
-.dots{
-
-    position:fixed;
-
-    left:50%;
-    bottom:17px;
-
-    transform:
-        translateX(-50%);
-
-    display:flex;
-
-    gap:7px;
-
-    z-index:100;
-}
-
-
-.dot{
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.25);
-
-    transition:.3s;
-}
-
-
-.dot.active{
-
-    width:25px;
-
-    border-radius:10px;
-
-    background:#ff9dca;
-
-    box-shadow:
-        0 0 12px
-        #ff9dca;
-}
-
-
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media(max-width:600px){
 
     .page{
-        padding:15px;
+        padding:12px;
     }
 
     .content{
-        width:94%;
+        width:96%;
+    }
+
+    .card{
+        padding:
+            25px
+            17px;
     }
 
     .intro-heart{
@@ -936,99 +1202,140 @@ RIGHT GIRL = image का right half
 
         width:78vw;
 
-        height:54vh;
+        height:52vh;
+    }
+
+    .photo-small{
+
+        width:35vw;
+
+        height:42vw;
     }
 
     .meet-scene{
 
-        height:55vh;
+        height:50vh;
 
-        min-height:320px;
+        min-height:300px;
     }
 
     .animated-girl{
 
-        width:70%;
+        width:75%;
 
-        height:75%;
+        height:76%;
     }
 
-    @keyframes leftGirlCome{
+
+    @keyframes leftWalk{
 
         0%{
 
-            left:-80%;
+            left:-85%;
 
             opacity:0;
 
             transform:
                 translateY(-50%)
-                scale(.75);
+                scale(.72)
+                rotate(-4deg);
         }
 
-        15%{
+        12%{
             opacity:1;
+        }
+
+        40%{
+
+            left:-12%;
+
+            transform:
+                translateY(-50%)
+                scale(.82)
+                rotate(3deg);
         }
 
         70%{
 
-            left:-8%;
+            left:-7%;
 
             transform:
                 translateY(-50%)
-                scale(.9);
+                scale(.88)
+                rotate(-1deg);
         }
 
         100%{
 
-            left:-8%;
+            left:-6%;
+
+            opacity:1;
 
             transform:
                 translateY(-50%)
-                scale(.9);
+                scale(.88)
+                rotate(0);
         }
     }
 
 
-    @keyframes rightGirlCome{
+    @keyframes rightWalk{
 
         0%{
 
-            right:-80%;
+            right:-85%;
 
             opacity:0;
 
             transform:
                 translateY(-50%)
-                scale(.75);
+                scale(.72)
+                rotate(4deg);
         }
 
-        15%{
+        12%{
             opacity:1;
+        }
+
+        40%{
+
+            right:-12%;
+
+            transform:
+                translateY(-50%)
+                scale(.82)
+                rotate(-3deg);
         }
 
         70%{
 
-            right:-8%;
+            right:-7%;
 
             transform:
                 translateY(-50%)
-                scale(.9);
+                scale(.88)
+                rotate(1deg);
         }
 
         100%{
 
-            right:-8%;
+            right:-6%;
+
+            opacity:1;
 
             transform:
                 translateY(-50%)
-                scale(.9);
+                scale(.88)
+                rotate(0);
         }
     }
 
     .meet-heart{
+        font-size:58px;
+    }
 
-        font-size:60px;
+    .sparkle{
+        font-size:14px;
     }
 }
 
@@ -1039,9 +1346,9 @@ RIGHT GIRL = image का right half
 <body>
 
 
-<!-- ======================================
+<!-- =====================================================
      BACKGROUND
-====================================== -->
+===================================================== -->
 
 <div class="stars"></div>
 
@@ -1052,18 +1359,15 @@ RIGHT GIRL = image का right half
     <!-- FLOATING HEARTS -->
 
     <div class="heart one">♡</div>
-
     <div class="heart two">♥</div>
-
     <div class="heart three">♡</div>
-
     <div class="heart four">♥</div>
 
 
 
-    <!-- =================================
+    <!-- =================================================
          PAGE 1
-    ================================== -->
+    ================================================== -->
 
     <section
         class="page active"
@@ -1071,327 +1375,689 @@ RIGHT GIRL = image का right half
 
         <div class="content">
 
-            <div class="intro-heart">
-                💗
-            </div>
+            <div class="card">
+
+                <div class="intro-heart">
+                    💗
+                </div>
+
+                <div class="small">
+                    A little surprise for
+                </div>
+
+                <h1>
+                    Faiza
+                </h1>
+
+                <p>
+                    For the girl who lives miles away,
+                    but somehow always feels close
+                    to my heart . 🤍 
+                        </p>
+
+        <div class="distance-line">
+            ✦ 6 Years • One Beautiful Friendship • Endless Memories ✦
+        </div>
+
+        <button class="next-btn" onclick="nextPage()">
+            Open My Little Surprise 💌
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — OUR SIX YEARS
+===================================================== -->
+
+<section class="page" id="page2">
+
+    <div class="content">
+
+        <div class="card memory-card">
 
             <div class="small">
-                A little surprise for
+                A friendship that survived the distance 🌙
             </div>
 
             <h1>
-                Faiza
+                Six Years of Us 🤍
             </h1>
 
             <p>
-                For the girl who lives miles away,
-                but somehow always feels close
-                to my heart. 🤍
+                Six years ago, I found a friend...
+                and somehow, without even realizing it,
+                you became one of the most important
+                people in my life.
             </p>
-
-            <button
-                class="next-btn"
-                onclick="nextPage()">
-
-                Tap to open your surprise ✨
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         PAGE 2
-    ================================== -->
-
-    <section
-        class="page"
-        id="page2">
-
-        <div class="content">
-
-            <div class="small">
-                Six beautiful years
-            </div>
-
-            <h2>
-                6 Years of Us 🤍
-            </h2>
 
             <p>
-
-                Six years of friendship.
-
-                <br><br>
-
-                Six years of conversations,
-                secrets, laughter,
-                silly moments and deep talks.
-
-                <br><br>
-
-                We may be far from each other,
-                but distance never made our
-                friendship feel far.
-
+                We haven't met countless times.
+                We live far away from each other.
+                But distance never managed to make
+                our bond feel distant.
             </p>
 
-            <button
-                class="next-btn"
-                onclick="nextPage()">
+            <div class="quote-box">
+                "Some people live far away,
+                but somehow live closest to your heart." 💗
+            </div>
 
-                Continue 💌
-
+            <button class="next-btn" onclick="nextPage()">
+                There's More For You 🌸
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =====================================================
+     PAGE 3 — ORIGINAL PHOTO
+===================================================== -->
 
-    <!-- =================================
-         PAGE 3
-         ZAHRA ORIGINAL PHOTO
-    ================================== -->
+<section class="page" id="page3">
 
-    <section
-        class="page"
-        id="page3">
+    <div class="content">
 
-        <div class="content">
+        <div class="card photo-card">
+
+            <div class="small">
+                A little piece of my world 📸
+            </div>
+
+            <h1>
+                This Is Me, Zahra 🤍
+            </h1>
 
             <div class="photo-frame">
 
                 <img
-                    src="zahra-original.jpg"
-                    alt="Zahra">
+                    src="zahra-photo.jpg"
+                    alt="Zahra"
+                    class="original-photo"
+                >
 
             </div>
-
-            <div class="small">
-                From my side of the distance
-            </div>
-
-            <h2>
-                That's me, Zahra 🤍
-            </h2>
 
             <p>
-
-                The friend who can tell you
-                almost everything without
-                feeling awkward.
-
-                <br><br>
-
-                And honestly...
-
-                I'm really lucky
-                to have you.
-
+                And yes...
+                this is the girl who is always
+                ready to listen to all your stories,
+                random talks, complaints,
+                happiness and everything in between. 🫶
             </p>
 
-            <button
-                class="next-btn"
-                onclick="nextPage()">
-
-                Wait... someone is coming 👀
-
+            <button class="next-btn" onclick="nextPage()">
+                Now Watch Our Little Story 👭
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =====================================================
+     PAGE 4 — ANIMATED FRIENDS MEETING
+===================================================== -->
 
-    <!-- =================================
-         PAGE 4
-         ANIMATED GIRLS
-    ================================== -->
+<section class="page" id="page4">
 
-    <section
-        class="page"
-        id="page4">
+    <div class="content">
 
-        <div class="content">
+        <div class="card meeting-card">
 
             <div class="small">
-                Even when we're far away...
+                Even miles couldn't stop us...
             </div>
 
-            <h2>
-                Distance Can't Stop Us 💕
-            </h2>
+            <h1>
+                If Distance Disappeared For A Moment 💕
+            </h1>
 
+            <p>
+                Imagine you and me walking towards
+                each other after all these years...
+            </p>
 
-            <div class="meet-scene">
+            <div class="meeting-scene">
 
+                <div class="moon"></div>
 
-                <!--
-                    SAME IMAGE
-                    LEFT HALF
-                -->
+                <div class="stars-layer">
+                    ✦
+                    <span>✧</span>
+                    <span>⋆</span>
+                    <span>✦</span>
+                    <span>✧</span>
+                </div>
 
-                <div
-                    class="animated-girl girl-left">
+                <!-- LEFT ANIMATED FRIEND -->
+
+                <div class="animated-girl girl-left">
+
+                    <img
+                        src="animated-friend-left.png"
+                        alt="Animated friend"
+                    >
+
                 </div>
 
 
-                <!--
-                    SAME IMAGE
-                    RIGHT HALF
-                -->
+                <!-- RIGHT ANIMATED FRIEND -->
 
-                <div
-                    class="animated-girl girl-right">
+                <div class="animated-girl girl-right">
+
+                    <img
+                        src="animated-friend-right.png"
+                        alt="Animated friend"
+                    >
+
                 </div>
 
 
-                <!--
-                    HEART WHEN THEY MEET
-                -->
+                <!-- GLOW WHEN THEY MEET -->
 
-                <div
-                    class="meet-heart">
+                <div class="meet-glow"></div>
 
+                <div class="meet-heart">
                     💗
+                </div>
 
+
+                <!-- SPARKLES -->
+
+                <div class="sparkle sparkle-1">
+                    ✦
+                </div>
+
+                <div class="sparkle sparkle-2">
+                    ✧
+                </div>
+
+                <div class="sparkle sparkle-3">
+                    ✦
+                </div>
+
+                <div class="sparkle sparkle-4">
+                    ✧
+                </div>
+
+                <div class="sparkle sparkle-5">
+                    ✦
                 </div>
 
             </div>
 
+            <p class="meeting-text">
+                One day, InshaAllah...
+                no screens, no distance,
+                no "I wish you were here."
+                Just us. 🤍
+            </p>
 
-            <button
-                class="next-btn"
-                onclick="nextPage()">
-
-                Look what happened... 🥹
-
+            <button class="next-btn" onclick="nextPage()">
+                One More Thing 🌷
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =====================================================
+     PAGE 5 — BEST FRIEND MESSAGE
+===================================================== -->
 
-    <!-- =================================
-         PAGE 5
-    ================================== -->
+<section class="page" id="page5">
 
-    <section
-        class="page"
-        id="page5">
+    <div class="content">
 
-        <div class="content">
+        <div class="card letter-card">
 
-            <div class="friend-card">
-
-                <div class="big-heart">
-                    🫂
-                </div>
-
-                <div class="small">
-                    Finally together
-                </div>
-
-                <h2>
-                    Some bonds don't need distance. 💗
-                </h2>
-
-                <p>
-
-                    We may not meet every day.
-
-                    <br><br>
-
-                    We may not even meet often.
-
-                    <br><br>
-
-                    But whenever we talk,
-                    it feels like no time
-                    has passed at all.
-
-                </p>
-
-                <button
-                    class="next-btn"
-                    onclick="nextPage()">
-
-                    And now... your birthday 🎂
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================
-         PAGE 6
-    ================================== -->
-
-    <section
-        class="page"
-        id="page6">
-
-        <div class="content">
-
-            <div class="intro-heart">
-                🎂
+            <div class="letter-icon">
+                💌
             </div>
 
             <div class="small">
-                Today is your day
+                A message from my heart
+            </div>
+
+            <h1>
+                Dear Faiza,
+            </h1>
+
+            <p>
+                You are not just my best friend.
+                You are the person I can talk to
+                without thinking twice.
+            </p>
+
+            <p>
+                I can tell you my happiest moments,
+                my stupid thoughts, my problems,
+                my secrets and even the things
+                I don't know how to explain.
+            </p>
+
+            <p>
+                And somehow...
+                you always understand. 🥹🤍
+            </p>
+
+            <div class="highlight-message">
+                Thank you for being my safe place. 🌸
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Birthday Time 🎂
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 — BIRTHDAY
+===================================================== -->
+
+<section class="page" id="page6">
+
+    <div class="content">
+
+        <div class="card birthday-card">
+
+            <div class="birthday-crown">
+                👑
+            </div>
+
+            <div class="small">
+                Today is all about you ✨
             </div>
 
             <h1>
                 Happy Birthday
+                <span class="name">
+                    Faiza
+                </span> 🎂💗
             </h1>
 
-            <h2
-                style="color:#ffb8d9;">
-
-                Faiza 💕
-
-            </h2>
+            <div class="birthday-cake">
+                🎂
+            </div>
 
             <p>
-
-                May Allah fill your life
-                with happiness, peace,
-                beautiful moments and
-                people who genuinely
-                love you.
-
-                <br><br>
-
-                May every beautiful dream
-                in your heart come true. ✨
-
+                May Allah fill your life with
+                happiness, peace, success,
+                beautiful moments and countless
+                reasons to smile.
             </p>
 
-            <button
-                class="next-btn"
-                onclick="nextPage()">
+            <p>
+                May every dream hidden inside
+                your heart slowly become reality.
+                Ameen. 🤲🏻🤍
+            </p>
 
-                Your final message 💌
+            <div class="birthday-wish">
+                Stay happy.
+                Stay blessed.
+                Stay exactly the way you are. 🌷
+            </div>
 
+            <button class="next-btn" onclick="nextPage()">
+                Final Surprise 💖
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =====================================================
+     PAGE 7 — FINAL
+===================================================== -->
 
- 
+<section class="page" id="page7">
+
+    <div class="content">
+
+        <div class="card final-card">
+
+            <div class="small">
+                For my favourite person...
+            </div>
+
+            <h1>
+                Faiza 🤍
+            </h1>
+
+            <div class="final-photo-frame">
+
+                <img
+                    src="faiza-photo.jpg"
+                    alt="Faiza"
+                    class="original-photo"
+                >
+
+            </div>
+
+            <p class="final-message">
+
+                Six years later,
+                miles apart,
+                and after only a few meetings...
+
+                <br><br>
+
+                somehow you are still
+                one of the closest people
+                to my heart.
+
+                <br><br>
+
+                Happy Birthday to my
+                most special friend. 🥹💗
+
+            </p>
+
+            <div class="forever-text">
+                From Zahra, with all my heart 🤍
+            </div>
+
+            <div class="heart-row">
+                💗 ✨ 🫶🏻 ✨ 💗
+            </div>
+
+            <button class="restart-btn" onclick="restart()">
+                Watch It Again ↻
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+let currentPage = 1;
+
+const totalPages = 7;
+
+
+/* -----------------------------------------------------
+   SHOW PAGE
+----------------------------------------------------- */
+
+function showPage(pageNumber) {
+
+    const allPages =
+        document.querySelectorAll(".page");
+
+    allPages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const selectedPage =
+        document.getElementById(
+            "page" + pageNumber
+        );
+
+
+    if(selectedPage) {
+
+        selectedPage.classList.add("active");
+
+    }
+
+
+    currentPage = pageNumber;
+
+
+    /*
+       Start the animated friends
+       whenever Page 4 opens.
+    */
+
+    if(pageNumber === 4) {
+
+        restartMeetingAnimation();
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* -----------------------------------------------------
+   NEXT PAGE
+----------------------------------------------------- */
+
+function nextPage() {
+
+    if(currentPage < totalPages) {
+
+        showPage(currentPage + 1);
+
+    }
+
+}
+
+
+/* -----------------------------------------------------
+   RESTART
+----------------------------------------------------- */
+
+function restart() {
+
+    showPage(1);
+
+}
+
+
+/* -----------------------------------------------------
+   FRIENDS MEETING ANIMATION
+----------------------------------------------------- */
+
+function restartMeetingAnimation() {
+
+    const leftGirl =
+        document.querySelector(
+            ".girl-left"
+        );
+
+    const rightGirl =
+        document.querySelector(
+            ".girl-right"
+        );
+
+    const glow =
+        document.querySelector(
+            ".meet-glow"
+        );
+
+    const heart =
+        document.querySelector(
+            ".meet-heart"
+        );
+
+    const sparkles =
+        document.querySelectorAll(
+            ".sparkle"
+        );
+
+
+    if(!leftGirl || !rightGirl) {
+        return;
+    }
+
+
+    /*
+       Reset animations
+    */
+
+    leftGirl.style.animation = "none";
+
+    rightGirl.style.animation = "none";
+
+    if(glow) {
+        glow.style.animation = "none";
+    }
+
+    if(heart) {
+        heart.style.animation = "none";
+    }
+
+
+    sparkles.forEach(function(item) {
+
+        item.style.animation = "none";
+
+    });
+
+
+    /*
+       Force browser reflow
+       so animation can start again.
+    */
+
+    void leftGirl.offsetWidth;
+
+    void rightGirl.offsetWidth;
+
+
+    /*
+       Start both friends
+       from opposite sides.
+    */
+
+    leftGirl.style.animation =
+        "leftWalk 4.5s cubic-bezier(.22,.61,.36,1) forwards";
+
+
+    rightGirl.style.animation =
+        "rightWalk 4.5s cubic-bezier(.22,.61,.36,1) forwards";
+
+
+    /*
+       Heart appears when
+       they meet.
+    */
+
+    if(heart) {
+
+        heart.style.animation =
+            "meetingHeart 1.4s 4s cubic-bezier(.2,.8,.2,1) forwards";
+
+    }
+
+
+    /*
+       Glow effect
+    */
+
+    if(glow) {
+
+        glow.style.animation =
+            "meetingGlow 1.6s 4s ease-out forwards";
+
+    }
+
+
+    /*
+       Sparkles
+    */
+
+    sparkles.forEach(function(item) {
+
+        item.style.animation =
+            "sparkleBurst 1.5s 4.1s ease-out forwards";
+
+    });
+
+}
+
+
+/* -----------------------------------------------------
+   KEYBOARD
+----------------------------------------------------- */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if(
+            event.key === "ArrowRight" ||
+            event.key === "Enter"
+        ) {
+
+            nextPage();
+
+        }
+
+
+        if(
+            event.key === "ArrowLeft"
+        ) {
+
+            if(currentPage > 1) {
+
+                showPage(
+                    currentPage - 1
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* -----------------------------------------------------
+   INITIAL PAGE
+----------------------------------------------------- */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        showPage(1);
+
+    }
+);
+
+</script>
+
+</body>
+      </html>
+                
